@@ -1,0 +1,14 @@
+{
+  "name": "founder-guide",
+  "owner": {
+    "name": "Founder Guide",
+    "url": "https://www.founder-guide.com"
+  },
+  "plugins": [
+    {
+      "name": "founder-guide",
+      "source": "./plugins/founder-guide",
+      "description": "Founder Guide MCP server + the founder-guide-tools skill, installed together. One command to connect your workspace and teach Claude to use the tools well."
+    }
+  ]
+}

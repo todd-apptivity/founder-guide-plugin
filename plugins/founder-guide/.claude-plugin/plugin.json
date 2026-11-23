@@ -1,0 +1,10 @@
+{
+  "name": "founder-guide",
+  "description": "Connect your Founder Guide workspace to Claude Code and use its MCP tools effectively. Bundles the Founder Guide MCP server (read and update your business plan, content, contacts, tasks, and customer journey) with the founder-guide-tools skill that teaches correct tool use.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Founder Guide",
+    "url": "https://www.founder-guide.com"
+  },
+  "homepage": "https://www.founder-guide.com/help/founder-guide-tools-skill"
+}

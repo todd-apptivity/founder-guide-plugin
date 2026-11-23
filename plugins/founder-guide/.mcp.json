@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "founder-guide": {
+      "type": "http",
+      "url": "https://www.founder-guide.com/api/mcp"
+    }
+  }
+}
