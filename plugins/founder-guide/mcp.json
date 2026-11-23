@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "founder-guide": {
+      "type": "streamable-http",
+      "url": "https://www.founder-guide.com/api/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": { "mode": "dcr" }
+          }
+        }
+      }
+    }
+  }
+}

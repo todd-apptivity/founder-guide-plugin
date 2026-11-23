@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "founder-guide",
+  "version": "0.3.0",
+  "description": "Connect your Founder Guide workspace to your AI tool. Bundles the Founder Guide MCP server (read and update your business plan, demand cases, outreach, content, contacts, tasks, and customer journey) with the founder-guide-tools skill that teaches correct tool use.",
+  "license": "MIT",
+  "author": {
+    "name": "Founder Guide",
+    "url": "https://www.founder-guide.com"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Founder Guide",
+        "shortDescription": "Your startup plan, in chat",
+        "longDescription": "Founder Guide keeps a founder's business profile, demand evidence, outreach, content, contacts, tasks, goals, cash flow, and time in one workspace. This plugin connects that workspace so your AI tool reads it before it answers and, with your permission, updates it while you work. You sign in through Founder Guide and choose exactly which permissions each connection gets. The bundled founder-guide-tools skill teaches the model to find the right workspace, read before it writes, and confirm before any update or delete. Founder Guide never sends emails or posts on your behalf. MCP connections come with the Operator, Builder, and Founder Circle subscriptions.",
+        "developerName": "Apptivity",
+        "category": "Productivity",
+        "websiteURL": "https://www.founder-guide.com",
+        "supportURL": "https://www.founder-guide.com/help",
+        "privacyPolicyURL": "https://www.founder-guide.com/privacy",
+        "termsOfServiceURL": "https://www.founder-guide.com/terms",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}
