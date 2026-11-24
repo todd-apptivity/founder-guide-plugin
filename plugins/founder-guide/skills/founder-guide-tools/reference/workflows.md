@@ -30,13 +30,13 @@ Copy-paste recipes for common founder requests. Every recipe assumes you have al
    `platform`/`author_type` so the draft matches the user's voice.
 2. `create_content_item` with `platform`, `format`, `status: 'draft'`, the descriptions, and
    any `tags` / `scheduled_for`.
-3. Later edits: `update_content_item` by `content_id`; to publish/schedule,
+3. Later edits: `update_content_item` by `content_id`; to record publication or scheduling,
    `update_content_status` (note: publishing requires a post URL on the item).
 
 ## Upsert a task
 
-1. `upsert_task` with `title`, `description`, optional `effort_estimate`, `due_date`, and the
-   owning `section_id`/`entity_type`. Omit `task_id` to create, include it to update.
+1. `upsert_task` with `title`, `status` (required: `to_do`, `doing`, `done`, or `cancelled`), `description`, optional `effort_estimation`, `due_by`, `section_ids`, and
+   `parent_type`/`parent_id` as supported by the live tool schema. Omit `task_id` to create, include it to update.
 2. Read a task back with `get_task`.
 
 ## Review or edit the customer journey
@@ -210,9 +210,10 @@ through `propose_case_update` (see the demand-case loop above).
 4. `upsert_cost_item` for contractor bills, payroll, and pass-through expenses.
 5. As reality lands: `draft_invoice` + `generate_invoice_from_milestones` (or
    `generate_invoice_from_time`), which the founder then issues — issuing is what creates the
-   committed inflow, due on net terms. Then `record_payment` on the **actual** date. The gap
-   between issuing and payment is what teaches the forecast how this client really pays, so do
-   not backfill both at once. Issuing and sending are human-only: agents draft, founders send.
+   committed inflow, due on net terms. The founder records payment against an issued invoice in the app.
+   `record_payment` takes a planned `billing_schedule_id`; do not use it to record payment
+   against an issued invoice. The gap between issuing and payment teaches the forecast how
+   this client pays. Issuing and sending are human-only: agents draft, founders send.
 6. Keep `update_estimate_to_complete` current — it drives the margin pace check, and a stale
    estimate makes a project look healthier than it is.
 
@@ -317,5 +318,6 @@ Three options, best first:
 
 `provide_field_suggestions` is in-app only and will not appear in your `tools/list`.
 
-Treat `delete_entity`, publishing content, and issuing an invoice as actions that always need
-explicit confirmation first — none of them can be undone by Founder Guide.
+Confirm before `delete_entity` or changing a content record to published. Changing that
+record does not send a social post. Issuing an invoice is unavailable through MCP; direct
+the founder to the app.

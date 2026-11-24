@@ -27,8 +27,8 @@ Follow these six rules. Most failures come from skipping one of them.
 1. **Discover first — call `list_workspaces`.** It needs no `knowledge_graph_id` and returns
    the workspaces the user can act on, each with a stable id and name. Pick the right one
    (ask the user if more than one).
-2. **Pass `knowledge_graph_id` on EVERY other tool call.** Every tool except
-   `list_workspaces` requires it. A call without it — or with an id the user can't access —
+2. **Pass `knowledge_graph_id` on EVERY other tool call.** The discovery tools `list_workspaces` and `list_vnext_workspaces` do not require it;
+   use the live schema for all other calls. A call without it — or with an id the user can't access —
    fails authorization. Reuse the id from step 1 for the whole session.
 3. **Read before you write, and read the right thing.** Never guess an id or a field name.
    For plan sections, `get_section_state` returns the schema **and** the current data (plus

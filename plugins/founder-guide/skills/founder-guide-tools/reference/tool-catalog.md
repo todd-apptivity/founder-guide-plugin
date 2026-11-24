@@ -173,7 +173,7 @@ Append-mostly. The safest place to put something the user just said.
 | `upsert_assumption` | `assumption_id?`, `entity_type`/`section_id`, `description`, `importance?`, `validation_status?` | Create or update an assumption (omit the id to create). |
 | `upsert_question` | `question_id?`, …, `question`, `suggested_respondent?`, `priority?`, `status?`, `answer?` | Create or update a question. |
 | `upsert_risk` | `risk_id?`, …, `description`, `severity?`, `mitigation?`, `status?` | Create or update a risk. |
-| `upsert_task` | `task_id?`, `title`, `description?`, `status?`, `effort_estimation?`, `due_by?`, `section_ids?`, `goal_id?`, `parent_type?`/`parent_id?`, `subtasks?` | Create or update a task. Pass `goal_id` to hang it under a founder goal. |
+| `upsert_task` | `task_id?`, `title`, `status`, `description?`, `effort_estimation?`, `due_by?`, `section_ids?`, `goal_id?`, `parent_type?`/`parent_id?`, `subtasks?` | Create or update a task. Pass `goal_id` to hang it under a founder goal. |
 | `upsert_goal` | `goal_id?`, `title`, `description?`, `due_date?`, `measure_type?`, `unit?`, `min_value?`, `target_value?`, `current_value?`, `state?` | Create or update a founder goal. Goals measure by a target number (min→target) or by a checklist of tasks, and move `active` → `complete` → `archived`. Add tasks under it with `upsert_task` + `goal_id`. |
 
 ## `Author content` — risk: low

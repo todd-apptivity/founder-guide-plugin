@@ -83,4 +83,6 @@ Also irreversible in practice, though they don't read that way:
 - `add_case_evidence` with `action: "revise"` **drops every supporting quote** the founder has
   not explicitly confirmed, landing the field back on `assumed`. Omitting
   `kept_support_conversation_ids` is how evidence gets silently lost.
-- Issuing an invoice and `record_payment` create committed ledger entries that feed the forecast. Drafting one does not — a draft is not money.
+- Issuing an invoice is human-only. `record_payment` acts on a planned billing schedule,
+  not an issued invoice. Confirm the target and actual payment date before recording it.
+  Drafting an invoice does not create a committed inflow.
