@@ -1,7 +1,7 @@
 {
   "name": "founder-guide",
   "description": "Connect your Founder Guide workspace to Claude and use its tools well. Bundles the Founder Guide MCP server (read and update your business plan, demand cases, outreach, content, contacts, tasks, and customer journey) with the founder-guide-tools skill that teaches correct tool use.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "icon": "./assets/icon.png",
   "privacyPolicyUrl": "https://www.founder-guide.com/privacy",
